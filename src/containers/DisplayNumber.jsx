@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
 import DisplayNumber from '../components/DisplayNumber';
+import {connect} from 'react-redux'
+/**
+ * connect()를 수행하면 리턴 값이 함수. 그 리턴 함수를 다시 수행하여 만들어진 컴포넌트 리턴.  
+ * 여기서 리턴되는 이 컴포넌트는 기존에 우리가 수동으로 만들었던 DisplayNumber의 Wrapping 컴포넌트와 같은 역할의 컴포넌트.  
+ * 
+ * cf) https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e -> connect 함수 내부가 어떻게 구현되어있는지 확인해볼 수 있다.
+ */
+export default connect()(DisplayNumber);
+
+/* 
+import React, { Component } from 'react';
 import store from '../store';
 
-/**
- * 컨테이너 컴포넌트 (container component)
- * 애플리케이션과 종속되는 작업을 처리. ex) redux와의 통신  
- */
+
 export default class extends Component {
     state = {number:store.getState().number}
 
@@ -19,6 +26,7 @@ export default class extends Component {
     }
 
     render(){
-        return <DisplayNumber number={this.state.number}></DisplayNumber>
+        return <DisplayNumber number={this.state.number} unit={this.props.unit}></DisplayNumber>
     }
-}
+} 
+*/
