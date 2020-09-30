@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
  * cf) https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e -> connect 함수 내부가 어떻게 구현되어있는지 확인해볼 수 있다.
  */
 
-// redux에서 store의 값이 변경 될 때마다 아래 함수를 호출. 호출될 때 redux store의 state값을 인자로 받는다 
+// redux에서 store의 값이 변경 될 때마다 아래 함수를 호출. 호출될 때 redux store의 state값 [store.getState()] 을 인자로 받는다 
 function mapReduxStateToReactProps(state){ // Redux의 store state를 React 컴포넌트의 props로 mapping(연결)해주는 함수
     return { 
         //DisplayNumber로 전달할 props명 : 전달할 값  
