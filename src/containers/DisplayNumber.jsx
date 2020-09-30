@@ -8,17 +8,14 @@ import {connect} from 'react-redux'
  */
 
 // redux에서 store의 값이 변경 될 때마다 아래 함수를 호출. 호출될 때 redux store의 state값을 인자로 받는다 
-function mapReduxStateToReactProps(state){ // Redux의 store state를 React의 props로 mapping(연결)해주는 함수
+function mapReduxStateToReactProps(state){ // Redux의 store state를 React 컴포넌트의 props로 mapping(연결)해주는 함수
     return { 
         //DisplayNumber로 전달할 props명 : 전달할 값  
         number : state.number
     }
 }
-function mapReduxDispatchToReactProps(){ // Redux의 Dispatch를 React의 props로 mapping(연결)해주는 함수
-    return {}
-}
 
-export default connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(DisplayNumber);
+export default connect(mapReduxStateToReactProps)(DisplayNumber);
 
 /* 
 import React, { Component } from 'react';
